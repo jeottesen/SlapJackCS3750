@@ -95,6 +95,64 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Img\cardBack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\Ace_of_Clubs.png" />
+    <Resource Include="Img\Ace_of_Diamonds.png" />
+    <Resource Include="Img\Ace_of_Hearts.png" />
+    <Resource Include="Img\Ace_of_Spades.png" />
+    <Resource Include="Img\Eight_of_Clubs.png" />
+    <Resource Include="Img\Eight_of_Diamonds.png" />
+    <Resource Include="Img\Eight_of_Hearts.png" />
+    <Resource Include="Img\Eight_of_Spades.png" />
+    <Resource Include="Img\Five_of_Clubs.png" />
+    <Resource Include="Img\Five_of_Diamonds.png" />
+    <Resource Include="Img\Five_of_Hearts.png" />
+    <Resource Include="Img\Five_of_Spades.png" />
+    <Resource Include="Img\Four_of_Clubs.png" />
+    <Resource Include="Img\Four_of_Diamonds.png" />
+    <Resource Include="Img\Four_of_Hearts.png" />
+    <Resource Include="Img\Four_of_Spades.png" />
+    <Resource Include="Img\Jack_of_Clubs.png" />
+    <Resource Include="Img\Jack_of_Diamonds.png" />
+    <Resource Include="Img\Jack_of_Hearts.png" />
+    <Resource Include="Img\Jack_of_Spades.png" />
+    <Resource Include="Img\King_of_Clubs.png" />
+    <Resource Include="Img\King_of_Diamonds.png" />
+    <Resource Include="Img\King_of_Hearts.png" />
+    <Resource Include="Img\King_of_Spades.png" />
+    <Resource Include="Img\Nine_of_Clubs.png" />
+    <Resource Include="Img\Nine_of_Diamonds.png" />
+    <Resource Include="Img\Nine_of_Hearts.png" />
+    <Resource Include="Img\Nine_of_Spades.png" />
+    <Resource Include="Img\Queen_of_Clubs.png" />
+    <Resource Include="Img\Queen_of_Diamonds.png" />
+    <Resource Include="Img\Queen_of_Hearts.png" />
+    <Resource Include="Img\Queen_of_Spades.png" />
+    <Resource Include="Img\Seven_of_Clubs.png" />
+    <Resource Include="Img\Seven_of_Diamonds.png" />
+    <Resource Include="Img\Seven_of_Hearts.png" />
+    <Resource Include="Img\Seven_of_Spades.png" />
+    <Resource Include="Img\Six_of_Clubs.png" />
+    <Resource Include="Img\Six_of_Diamonds.png" />
+    <Resource Include="Img\Six_of_Hearts.png" />
+    <Resource Include="Img\Six_of_Spades.png" />
+    <Resource Include="Img\Ten_of_Clubs.png" />
+    <Resource Include="Img\Ten_of_Diamonds.png" />
+    <Resource Include="Img\Ten_of_Hearts.png" />
+    <Resource Include="Img\Ten_of_Spades.png" />
+    <Resource Include="Img\Three_of_Clubs.png" />
+    <Resource Include="Img\Three_of_Diamonds.png" />
+    <Resource Include="Img\Three_of_Hearts.png" />
+    <Resource Include="Img\Three_of_Spades.png" />
+    <Resource Include="Img\Two_of_Clubs.png" />
+    <Resource Include="Img\Two_of_Diamonds.png" />
+    <Resource Include="Img\Two_of_Hearts.png" />
+    <Resource Include="Img\Two_of_Spades.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
