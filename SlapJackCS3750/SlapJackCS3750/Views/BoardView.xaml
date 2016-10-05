@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="BoardView" Height="300" Width="300">
     <Grid>
-        <ContentControl x:Name="ActiveItem" Width="100" Height="145"/>
+        <Image Source="{Binding CardURL}" Width="100" Height="145"/>
     </Grid>
 </Window>

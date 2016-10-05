@@ -2,27 +2,25 @@
 {
     using Caliburn.Micro;
     using System.Windows;
-    using ViewModels;
 
     public class BoardViewModel : Conductor<object>
     {
-        private CardViewModel cardVM;
+        private string cardURL;
 
-        /*
-        public CardViewModel CardVM
+        public string CardURL
         {
-            get { return cardVM; }
+            get { return cardURL; }
             set
             {
-                cardVM = value;
-                NotifyOfPropertyChange(() => CardVM);
+                cardURL = value;
+                NotifyOfPropertyChange(() => cardURL);
             }
-        }*/
-        
+        }
+
+
         public BoardViewModel()
         {
-            cardVM = new CardViewModel();
-            ActivateItem(cardVM);
+            CardURL = "/Img/Ace_of_Spades.png";
         }
         
     }

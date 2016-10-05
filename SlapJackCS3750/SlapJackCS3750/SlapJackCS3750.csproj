@@ -77,15 +77,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Views\CardView.xaml.cs">
-      <DependentUpon>CardView.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Models\Deck.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppBootstrapper.cs" />
     <Compile Include="Models\Board.cs" />
     <Compile Include="Models\Card.cs" />
-    <Compile Include="ViewModels\CardViewModel.cs" />
     <Compile Include="Views\BoardView.xaml.cs">
       <DependentUpon>BoardView.xaml</DependentUpon>
     </Compile>
@@ -119,10 +116,6 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\BoardView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\CardView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
