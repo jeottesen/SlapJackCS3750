@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SlapJackCS3750"
         mc:Ignorable="d"
-        Title="BoardView" Height="300" Width="300">
-    <Grid>
-        <Image Source="{Binding CardURL}" Width="100" Height="145"/>
+        Title="BoardView" Height="500" Width="700"
+        KeyDown="Slap">
+   
+    <Grid >
+        <Grid.Background>
+            <ImageBrush ImageSource="/Img/background.jpg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+     
+        
+        <!--col1-->
+        <Label x:Name="Player1_Label" Grid.Column="0" Height="60" Width="60" Content="P1" FontSize="40" Foreground="RoyalBlue" FontWeight="DemiBold" />
+        <Image Source="/Img/cardback.png" Grid.Column="0" VerticalAlignment="Bottom" Height="200"/>
+        <!--col2-->
+        <Image x:Name="Pile" Grid.Column="1" Source="/Img/Ace_of_Clubs.png" Height="225"/>
+        
+        <!--col3-->
+        <Label x:Name="Player2_Label" Grid.Column="2" Height="60" Width="60" Content="P2" FontSize="40" Foreground="RoyalBlue" FontWeight="DemiBold" />
+        <Image Source="/Img/cardback.png" Grid.Column="2" VerticalAlignment="Bottom" Height="200"/>
     </Grid>
 </Window>

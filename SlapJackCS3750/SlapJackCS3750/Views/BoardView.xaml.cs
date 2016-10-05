@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using SlapJackCS3750.Models;
 
 namespace SlapJackCS3750
 {
@@ -19,9 +20,23 @@ namespace SlapJackCS3750
     /// </summary>
     public partial class BoardView : Window
     {
+        
         public BoardView()
         {
             InitializeComponent();
+            
+        }
+
+        private void Slap(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Z)
+            {
+                MessageBox.Show("Player 1 slapped!");
+            }
+            else if(e.Key == Key.NumPad0)
+            {
+                MessageBox.Show("Player 2 slapped!");
+            }
         }
     }
 }
