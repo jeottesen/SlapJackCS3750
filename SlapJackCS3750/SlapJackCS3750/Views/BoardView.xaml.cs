@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace SlapJackCS3750
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for BoardView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class BoardView : Window
     {
-        public MainWindow()
+        public BoardView()
         {
             InitializeComponent();
         }
