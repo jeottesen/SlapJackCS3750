@@ -8,5 +8,10 @@ namespace SlapJackCS3750
 {
     class Player
     {
+
+        void slap()
+        {
+            //call validSlap
+        }
     }
 }
