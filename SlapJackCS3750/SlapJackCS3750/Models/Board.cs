@@ -1,13 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SlapJackCS3750
+﻿namespace SlapJackCS3750
 {
+    using System;
+    using System.Collections.Generic;
+
     class Board
     {
-
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Hello World!");
+        }
     }
 }
