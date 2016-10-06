@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlapJackCS3750", "SlapJackCS3750\SlapJackCS3750.csproj", "{246C14CC-5CF2-4CC3-8974-892F4B24847D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlapJack", "SlapJack\SlapJack.csproj", "{A7F9181C-6F97-47F9-B86C-4ACC10E0CDF0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
