@@ -1,11 +1,14 @@
-﻿namespace SlapJackCS3750
+﻿namespace SlapJackGUI.ViewModels
 {
     using Caliburn.Micro;
+    using SlapJack.Models;
     using System.Windows;
 
     public class BoardViewModel : Conductor<object>
     {
         private string cardURL;
+
+        private Board board;
 
         public string CardURL
         {
@@ -20,7 +23,8 @@
 
         public BoardViewModel()
         {
-            CardURL = "/Img/Ace_of_Spades.png";
+            board = new Board();
+            CardURL = "/Img/" + board.getTopCard() + ".png";
         }
         
     }

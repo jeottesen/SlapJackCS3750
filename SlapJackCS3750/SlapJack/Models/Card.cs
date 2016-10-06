@@ -1,4 +1,4 @@
-﻿namespace SlapJackCS3750.Models
+﻿namespace SlapJack.Models
 {
     public enum Suit { Diamonds, Spades, Clubs, Hearts };
     public enum Face { Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Jack, Queen, King, Ace };
@@ -17,7 +17,7 @@
 
         public override string ToString()
         {
-            return face.ToString() + "_of_" + suit.ToString() + ".png";
+            return face.ToString() + "_of_" + suit.ToString();
         }
 
         private Suit suitValue

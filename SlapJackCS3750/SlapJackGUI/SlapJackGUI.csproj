@@ -7,8 +7,8 @@
     <ProjectGuid>{246C14CC-5CF2-4CC3-8974-892F4B24847D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SlapJackCS3750</RootNamespace>
-    <AssemblyName>SlapJackCS3750</AssemblyName>
+    <RootNamespace>SlapJackGUI</RootNamespace>
+    <AssemblyName>SlapJackGUI</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -77,12 +77,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\Deck.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppBootstrapper.cs" />
-    <Compile Include="Models\Board.cs" />
-    <Compile Include="Models\Card.cs" />
     <Compile Include="Views\BoardView.xaml.cs">
       <DependentUpon>BoardView.xaml</DependentUpon>
     </Compile>
@@ -179,6 +176,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Img\background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SlapJack\SlapJack.csproj">
+      <Project>{a7f9181c-6f97-47f9-b86c-4acc10e0cdf0}</Project>
+      <Name>SlapJack</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

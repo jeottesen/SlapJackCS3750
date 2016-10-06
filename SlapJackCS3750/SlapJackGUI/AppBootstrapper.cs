@@ -1,9 +1,8 @@
-﻿
-
-namespace SlapJackCS3750
+﻿namespace SlapJackCS3750
 {
     using Caliburn.Micro;
     using System.Windows;
+    using SlapJackGUI.ViewModels;
 
     public class AppBootstrapper : BootstrapperBase
     {
