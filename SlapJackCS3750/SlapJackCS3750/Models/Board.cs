@@ -8,5 +8,6 @@ namespace SlapJackCS3750
 {
     class Board
     {
+
     }
 }
