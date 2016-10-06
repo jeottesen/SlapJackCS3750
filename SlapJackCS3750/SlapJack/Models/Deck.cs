@@ -1,4 +1,4 @@
-﻿namespace SlapJackCS3750.Models
+﻿namespace SlapJack.Models
 {
     using System;
     using System.Collections.Generic;

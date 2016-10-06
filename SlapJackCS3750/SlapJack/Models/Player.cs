@@ -1,4 +1,4 @@
-﻿namespace SlapJackCS3750
+﻿namespace SlapJack
 {
     using System;
     using System.Collections.Generic;
