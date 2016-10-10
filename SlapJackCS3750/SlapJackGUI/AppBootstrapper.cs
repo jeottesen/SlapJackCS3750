@@ -1,4 +1,4 @@
-﻿namespace SlapJackCS3750
+﻿namespace SlapJackGUI
 {
     using Caliburn.Micro;
     using System.Windows;
