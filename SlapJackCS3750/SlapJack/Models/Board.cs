@@ -5,34 +5,47 @@
 
     public class Board
     {
+        private static int MAX_PLAYERS = 2;
         private List<Card> pile;
-        private Player[] players;
+        public List<Player> players { get; }
         private Deck deck;
-        private bool hasBeenSlapped;
         public int lastPlayed { get; set; }
 
         public Card getTopCard()
         {
-            return pile[0];
+            try
+            {
+                return pile[0];
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("There are no cards on the pile.");
+            }
+            return null;
         }
-
+        
         public Board()
         {
             //instantiate objects needed for game
             pile = new List<Card>();
-            players = new Player[2];
-            players[0] = new Player(this);
-            players[1] = new Player(this);
-            deck = new Deck();
-            hasBeenSlapped = false;
+            players = new List<Player>();
+            for (int playerId = 0; playerId < MAX_PLAYERS; playerId++)
+                players.Add(new Player());
+            
+            lastPlayed = 1;
 
             //deal players their cards
-            for (int i = 0; i < 26; i++)
+            deck = new Deck();
+            Card nextCard = deck.deal();
+            while (nextCard != null)
             {
-                players[0].receiveCard(deck.deal());
-                players[1].receiveCard(deck.deal());
+                for (int playerId = 0; playerId < MAX_PLAYERS; playerId++)
+                {
+                    players[playerId].receiveCard(nextCard);
+                    nextCard = deck.deal();
+
+                }
             }
-            // pile.Add(new Card(Suit.Spades, Face.Ace));
         }
 
         //get a player
@@ -44,32 +57,41 @@
 
         public void addCard(Card newCard)
         {
-            pile.Insert(0, newCard);
+            if (newCard != null)
+                pile.Insert(0, newCard);
         }
 
-        public void playerSlapped(Player player)
+        public bool playerSlapped(int playerId)
         {
             if (isValidSlap())
             {
-                player.addToBottom(pile);
+                players[playerId - 1].addToBottom(pile);
+                Console.WriteLine("Player " + playerId + "'s slap succeded! He added " + pile.Count + " cards to his hand");
                 pile.Clear();
+                return players[playerId].getHandCount() == 52;
 
             }
             else
             {
-                players[lastPlayed - 1].receiveCard(player.getTopCard());
+                Console.WriteLine("Player " + playerId + "'s slap failed. He gave a card to player " + lastPlayed);
+                players[playerId - 1].addToBottom(players[lastPlayed - 1].Flip());
             }
+
+            return false;
         }
 
         public Boolean isValidSlap()
         {
-            if (!hasBeenSlapped)
+
+            try
             {
-                hasBeenSlapped = true;
-                Card topCard = getTopCard();
-                return topCard.faceValue == Face.Jack;
+                return getTopCard().faceValue == Face.Jack;
             }
-            return false;
+            catch (NullReferenceException)
+            {
+                return false;
+            }
         }
+        
     }
 }

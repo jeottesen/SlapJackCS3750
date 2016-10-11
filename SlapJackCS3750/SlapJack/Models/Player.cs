@@ -11,39 +11,24 @@
     {
         //Properties
         private List<Card> hand;
-        private Models.Board gameBoard;  //Holds an instance of the Board to allow player to flip card onto the pile
-
+       
         //constructor
-        public Player(Board board)
+        public Player()
         {
-            gameBoard = board;
             hand = new List<Card>();
         }
 
-       //Methods
-        public void slap()
-        {
-            // do a boolean and have a while loop on main program(game) that will check each run through until a slap occurs
-           // _slapped = true;
 
-            gameBoard.playerSlapped(this);
-        }
-
-        public void Flip()
+        public Card Flip()
         {
             if (hand.Count > 0)
             {
-                
-                gameBoard.addCard(getTopCard());
+                Card card = hand[0];
+                hand.Remove(card);
+                return card;
             } // else player loses
 
-        }
-
-        public Card getTopCard()
-        {
-            Card card = hand[0];
-            hand.Remove(card);
-            return card;
+            return null;
         }
 
         public void receiveCard(Card card)

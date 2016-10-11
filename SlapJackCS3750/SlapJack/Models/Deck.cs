@@ -54,7 +54,7 @@
                 Card temp = deck[0];
                 deck.RemoveAt(0);
                 return temp;
-            } catch (InvalidOperationException)
+            } catch (ArgumentOutOfRangeException)
             {
                 return null;
             }
