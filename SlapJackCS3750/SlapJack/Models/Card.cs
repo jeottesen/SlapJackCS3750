@@ -20,7 +20,7 @@
             return face.ToString() + "_of_" + suit.ToString();
         }
 
-        private Suit suitValue
+        public Suit suitValue
         {
             get
             {
@@ -33,7 +33,7 @@
             }
         }
 
-        private Face faceValue
+        public Face faceValue
         {
             get
             {

@@ -1,36 +1,56 @@
 ﻿namespace SlapJack
 {
+    using Models;
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
     using System.Threading.Tasks;
 
-    class Player
+    public class Player
     {
         //Properties
-        private Models.Card[] hand;
-
-        private Boolean _slapped;
-        public Boolean slapped
+        private List<Card> hand;
+       
+        //constructor
+        public Player()
         {
-            get { return slapped; }
-            set {
-                _slapped = slapped;
-                }
+            hand = new List<Card>();
         }
 
-       //Methods
-        public void slap()
+
+        public Card Flip()
         {
-            // do a boolean and have a while loop on main program(game) that will check each run through until a slap occurs
-            _slapped = true;
+            if (hand.Count > 0)
+            {
+                Card card = hand[0];
+                hand.Remove(card);
+                return card;
+            } // else player loses
+
+            return null;
         }
 
-        public void Flip()
+        public void receiveCard(Card card)
         {
-
+            // Add to the top of the hand
+            hand.Insert(0, card);
         }
-         
+
+        public void addToBottom(Card card)
+        {
+            hand.Add(card);
+        }
+
+        public void addToBottom(IEnumerable<Card> cards)
+        {
+            hand.AddRange(cards);
+        }
+
+        public int getHandCount()
+        {
+            return hand.Count();
+        }
+
     }
 }
