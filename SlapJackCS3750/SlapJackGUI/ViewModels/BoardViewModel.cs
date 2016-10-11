@@ -7,24 +7,46 @@
     public class BoardViewModel : Conductor<object>
     {
         private string cardURL;
-
-        private Board board;
-
         public string CardURL
         {
             get { return cardURL; }
             set
             {
-                cardURL = value;
-                NotifyOfPropertyChange(() => cardURL);
+                cardURL = "/Img/" + value + ".png";
+                NotifyOfPropertyChange(() => CardURL);
+
             }
         }
+
+        private Board board;
+
+        public Board Board
+        {
+            get { return board; }
+            set
+            {
+                board = value;
+                NotifyOfPropertyChange(() => Board);
+            }
+        }
+
+        private int pileCount;
+
+        public int PileCount
+        {
+            get { return pileCount; }
+            set
+            {
+                pileCount = value;
+                NotifyOfPropertyChange(() => PileCount);
+            }
+        }
+
 
 
         public BoardViewModel()
         {
             board = new Board();
-            CardURL = "/Img/" + board.getTopCard() + ".png";
         }
         
     }

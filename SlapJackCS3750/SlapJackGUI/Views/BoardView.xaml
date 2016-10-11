@@ -35,13 +35,15 @@
        
         <Image Source="/Img/cardback.png" Grid.Column="0" VerticalAlignment="Bottom" Height="200"/>
         <Image Source="/Img/cardback.png" Grid.Column="0" VerticalAlignment="Bottom" Height="200"/>
- <!--end col1-->
+        <!--end col1-->
         
- <!--begin col2-->
-        <Image x:Name="Pile" Grid.Column="1" Source="/Img/Ace_of_Clubs.png" Height="225"/>
- <!--end col2-->
+
+        <!--begin col2-->
+        <Label x:Name="PileCount" Grid.Column="1" Height="60" Width="60" FontSize="40" Foreground="RoyalBlue" FontWeight="DemiBold" Margin="139.667,58,147,352.667" />
+        <Image x:Name="Pile" Grid.Column="1" Source="{Binding CardURL}" Height="225"/>
+        <!--end col2-->
         
- <!--begin col3-->
+        <!--begin col3-->
         <Grid Grid.Column="2" Height="60" Width="100" VerticalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
