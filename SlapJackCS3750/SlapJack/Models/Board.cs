@@ -23,6 +23,11 @@
             }
             return null;
         }
+
+        public int getPileCount()
+        {
+            return pile.Count;
+        }
         
         public Board()
         {
