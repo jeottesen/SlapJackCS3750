@@ -1,5 +1,6 @@
 ﻿namespace SlapJack
 {
+    using Models;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -9,24 +10,14 @@
     public class Player
     {
         //Properties
-        private Stack<Models.Card> hand;
+        private List<Card> hand;
         private Models.Board gameBoard;  //Holds an instance of the Board to allow player to flip card onto the pile
 
-        private Boolean _slapped;
-        public Boolean slapped
-        {
-            get { return slapped; }
-            set {
-                _slapped = slapped;
-                }
-        }
-
         //constructor
-        public Player(Models.Board board)
+        public Player(Board board)
         {
-            _slapped = false;
             gameBoard = board;
-            hand = new Stack<Models.Card>();
+            hand = new List<Card>();
         }
 
        //Methods
@@ -40,21 +31,34 @@
 
         public void Flip()
         {
-            if(hand.Count > 0)
+            if (hand.Count > 0)
             {
-                gameBoard.addCard(hand.Pop());
-            }
-            else
-            {
-                //player loses
-            }
-            
+                Card card = hand[0];
+                hand.Remove(card);
+                gameBoard.addCard(card);
+            } // else player loses
+
+        }
+        public void receiveCard(Card card)
+        {
+            // Add to the top of the hand
+            hand.Insert(0, card);
         }
 
-        public void receiveCard(Models.Card newCard)
+        public void addToBottom(Card card)
         {
-            hand.Push(newCard);
+            hand.Add(card);
         }
-         
+
+        public void addToBottom(IEnumerable<Card> cards)
+        {
+            hand.AddRange(cards);
+        }
+
+        public int getHandCount()
+        {
+            return hand.Count();
+        }
+
     }
 }

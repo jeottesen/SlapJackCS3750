@@ -9,6 +9,7 @@
         private Player[] players;
         private Deck deck;
         private bool hasBeenSlapped;
+        public int lastPlayed { get; set; }
 
         public Card getTopCard()
         {
@@ -50,12 +51,13 @@
         {
             if (isValidSlap())
             {
-                for(int i = 0; i < pile.Count; i++)
-                {
-                    player.receiveCard(pile[0]);
-                    pile.RemoveAt(0);
-                }
-                hasBeenSlapped = false;
+                player.addToBottom(pile);
+                pile.Clear();
+
+            }
+            else
+            {
+                players[lastPlayed - 1].receiveCard(player.Flip());
             }
         }
 
@@ -65,11 +67,7 @@
             {
                 hasBeenSlapped = true;
                 Card topCard = getTopCard();
-                if (topCard.faceValue.Equals(Face.Jack))
-                {
-                    return true;
-                }
-                return false;
+                return topCard.faceValue == Face.Jack;
             }
             return false;
         }

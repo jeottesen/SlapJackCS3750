@@ -36,17 +36,20 @@
                     case 'c':
                         Console.WriteLine("Player 1 flipped!");
                         board.getPlayer(1).Flip();
+                        board.lastPlayed = 1;
                         break;
                     case '/':
                         Console.WriteLine("Player 2 slapped!");
                         // TODO call player 2 slap
                         board.getPlayer(2).slap();
+
                         // Change gameEnd if a player won
                         break;
                     case ',':
                         Console.WriteLine("Player 2 flipped!");
                         // TODO call player 2 flip
                         board.getPlayer(2).Flip();
+                        board.lastPlayed = 2;
                         break;
                 }
 
