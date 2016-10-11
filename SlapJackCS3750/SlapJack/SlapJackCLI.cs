@@ -30,20 +30,23 @@
                     case 'z':
                         Console.WriteLine("Player 1 slapped!");
                         // TODO call player 1 slap
+                        board.getPlayer(1).slap();
                         // Change gameEnd if a player won
                         break;
                     case 'c':
                         Console.WriteLine("Player 1 flipped!");
-                        // TODO call player 1 flip
+                        board.getPlayer(1).Flip();
                         break;
                     case '/':
                         Console.WriteLine("Player 2 slapped!");
                         // TODO call player 2 slap
+                        board.getPlayer(2).slap();
                         // Change gameEnd if a player won
                         break;
                     case ',':
                         Console.WriteLine("Player 2 flipped!");
                         // TODO call player 2 flip
+                        board.getPlayer(2).Flip();
                         break;
                 }
 
@@ -52,9 +55,7 @@
                     Console.WriteLine("Goodbye");
                     gameEnd = true;
                 }
-
             }
-
         }
     }
 }
