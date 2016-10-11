@@ -66,14 +66,17 @@
                 pile.Insert(0, newCard);
         }
 
+        ///
+        /// <param name="playerId">The id of the player who slapped</param>
+        /// <returns>true if the players slap is valid. false if it was not.</returns>
         public bool playerSlapped(int playerId)
         {
-            if (isValidSlap())
+            bool slapValidity = isValidSlap();
+            if (slapValidity)
             {
                 players[playerId - 1].addToBottom(pile);
                 Console.WriteLine("Player " + playerId + "'s slap succeded! He added " + pile.Count + " cards to his hand");
                 pile.Clear();
-                return players[playerId].getHandCount() == 52;
 
             }
             else
@@ -82,7 +85,19 @@
                 players[playerId - 1].addToBottom(players[lastPlayed - 1].Flip());
             }
 
-            return false;
+            return slapValidity;
+        }
+
+        /// <summary>
+        /// Checks each players hand for a winner
+        /// </summary>
+        /// <returns>-1 if there is no winner or the id of the player that won</returns>
+        public int checkWinner()
+        {
+            int winnerId = -1;
+            for (int playerId = 0; playerId < MAX_PLAYERS; playerId++)
+                winnerId = players[playerId].getHandCount() == 52 ? playerId : -1;
+            return winnerId;
         }
 
         public Boolean isValidSlap()
