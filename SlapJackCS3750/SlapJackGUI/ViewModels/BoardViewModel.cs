@@ -31,7 +31,6 @@
         }
 
         private int pileCount;
-        
 
         public int PileCount
         {
@@ -43,31 +42,7 @@
             }
         }
 
-        private int player1HandCount;
 
-        public int Player1HandCount
-        {
-            get { return player1HandCount; }
-            set
-            {
-                player1HandCount = value;
-                NotifyOfPropertyChange(() => Player1HandCount);
-            }
-
-        }
-
-        private int player2HandCount;
-
-        public int Player2HandCount
-        {
-            get { return player2HandCount; }
-            set
-            {
-                player2HandCount = value;
-                NotifyOfPropertyChange(() => Player2HandCount);
-            }
-
-        }
 
         public BoardViewModel()
         {

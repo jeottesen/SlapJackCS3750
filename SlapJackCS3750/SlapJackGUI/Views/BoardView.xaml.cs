@@ -48,7 +48,6 @@
                     bvm.Board.lastPlayed = 1;
                     bvm.CardURL = card.ToString();
                     bvm.PileCount = bvm.Board.getPileCount();
-                    bvm.Player1HandCount = bvm.Board.players[0].getHandCount();
                     break;
                 case Key.OemQuestion:
                     Console.WriteLine("Player 2 slapped!");
@@ -62,7 +61,6 @@
                     bvm.Board.lastPlayed = 2;
                     bvm.CardURL = card.ToString();
                     bvm.PileCount = bvm.Board.getPileCount();
-                    bvm.Player2HandCount = bvm.Board.players[1].getHandCount();
                     break;
             }
         }
