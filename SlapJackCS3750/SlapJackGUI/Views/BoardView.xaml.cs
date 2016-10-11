@@ -31,36 +31,21 @@
         private void Slap(object sender, KeyEventArgs e)
         {
             BoardViewModel bvm = ((BoardViewModel)DataContext);
-            bool gameEnd = false;
-            Card card;
             switch (e.Key)
             {
-                
+                // Player 1 inputs   
                 case Key.Z:
-                    Console.WriteLine("Player 1 slapped!");
-                    gameEnd = bvm.Board.playerSlapped(1);
-                    if (gameEnd == true)
-                        Console.WriteLine("Player 1 Wins!");
+                    bvm.onSlap(1);
                     break;
                 case Key.C:
-                    card = bvm.Board.players[0].Flip();
-                    bvm.Board.addCard(card);
-                    bvm.Board.lastPlayed = 1;
-                    bvm.CardURL = card.ToString();
-                    bvm.PileCount = bvm.Board.getPileCount();
+                    bvm.onFlip(1);
                     break;
+                //Player 2 inputs
                 case Key.OemQuestion:
-                    Console.WriteLine("Player 2 slapped!");
-                    gameEnd = bvm.Board.playerSlapped(2);
-                    if (gameEnd == true)
-                        Console.WriteLine("Player 2 Wins!");
+                    bvm.onSlap(2);
                     break;
                 case Key.OemComma:
-                    card = bvm.Board.players[1].Flip();
-                    bvm.Board.addCard(card);
-                    bvm.Board.lastPlayed = 2;
-                    bvm.CardURL = card.ToString();
-                    bvm.PileCount = bvm.Board.getPileCount();
+                    bvm.onFlip(2);
                     break;
             }
         }
