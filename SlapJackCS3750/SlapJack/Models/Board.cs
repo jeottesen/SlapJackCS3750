@@ -57,7 +57,7 @@
             }
             else
             {
-                players[lastPlayed - 1].receiveCard(player.Flip());
+                players[lastPlayed - 1].receiveCard(player.getTopCard());
             }
         }
 

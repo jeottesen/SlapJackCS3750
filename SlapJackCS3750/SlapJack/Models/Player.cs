@@ -33,12 +33,19 @@
         {
             if (hand.Count > 0)
             {
-                Card card = hand[0];
-                hand.Remove(card);
-                gameBoard.addCard(card);
+                
+                gameBoard.addCard(getTopCard());
             } // else player loses
 
         }
+
+        public Card getTopCard()
+        {
+            Card card = hand[0];
+            hand.Remove(card);
+            return card;
+        }
+
         public void receiveCard(Card card)
         {
             // Add to the top of the hand
