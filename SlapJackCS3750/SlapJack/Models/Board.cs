@@ -74,7 +74,7 @@
             bool slapValidity = isValidSlap();
             if (slapValidity)
             {
-                players[playerId - 1].addToBottom(pile);
+                getPlayer(playerId).addToBottom(pile);
                 Console.WriteLine("Player " + playerId + "'s slap succeded! He added " + pile.Count + " cards to his hand");
                 pile.Clear();
 
@@ -82,10 +82,20 @@
             else
             {
                 Console.WriteLine("Player " + playerId + "'s slap failed. He gave a card to player " + lastPlayed);
-                players[playerId - 1].addToBottom(players[lastPlayed - 1].Flip());
+                getPlayer(lastPlayed).receiveCard(getPlayer(playerId).Flip());
             }
 
             return slapValidity;
+        }
+
+        public Card playerFlipped(int playerId)
+        {
+            Card card = getPlayer(playerId).Flip();
+            if (card == null)
+                return null;
+            pile.Add(card);
+            lastPlayed = playerId;
+            return card;
         }
 
         /// <summary>
@@ -97,6 +107,8 @@
             int winnerId = -1;
             for (int playerId = 0; playerId < MAX_PLAYERS; playerId++)
                 winnerId = players[playerId].getHandCount() == 52 ? playerId : -1;
+            for (int playerId = 0; playerId < MAX_PLAYERS; playerId++)
+                winnerId = (players[playerId].getHandCount() + pile.Count) == 52 ? playerId : -1;
             return winnerId;
         }
 

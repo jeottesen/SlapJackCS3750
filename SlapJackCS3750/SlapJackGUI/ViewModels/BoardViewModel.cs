@@ -79,18 +79,21 @@
             if (validSlap == true)
                 CardURL = "";
             updateCounts();
-            int winner  = board.checkWinner();
-            if (winner != -1)
-                displayWinner(winner);
+            checkAndDisplayWinner();
 
         }
 
 
         public void onFlip(int playerNum)
         {
-            Card card = board.getPlayer(playerNum).Flip();
+
+            Card card = board.playerFlipped(playerNum);
+            if (card == null)
+            {
+                checkAndDisplayWinner();
+                return;
+            }
             board.addCard(card);
-            board.lastPlayed = 1;
             CardURL = card.ToString();
             updateCounts();
         }
@@ -100,18 +103,25 @@
             PileCount = board.getPileCount();
             Player1HandCount = board.getPlayer(1).getHandCount();
             Player2HandCount = board.getPlayer(2).getHandCount();
+            if (player1HandCount == 0 || Player2HandCount == 0)
+                checkAndDisplayWinner();
 
         }
 
-        private void displayWinner(int playerId)
+        private void checkAndDisplayWinner()
         {
-            playerId++;
-            WinnerLabel = "Player " + playerId + " Wins!!!";
+            int playerId = board.checkWinner();
+            if (playerId != -1)
+            {
+                playerId++;
+                WinnerLabel = "Player " + playerId + " Wins!!!";
+            }
         }
 
         public BoardViewModel()
         {
             board = new Board();
+            updateCounts();
         }
         
     }
