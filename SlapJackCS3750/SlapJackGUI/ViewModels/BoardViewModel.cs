@@ -35,22 +35,60 @@
             }
         }
 
-        public void onSlap(int playerId)
-        {
+        private int player1HandCount;
 
-            bool validSlap = board.playerSlapped(playerId);
+        public int Player1HandCount
+        {
+            get { return player1HandCount; }
+            set
+            {
+                player1HandCount = value;
+                NotifyOfPropertyChange(() => Player1HandCount);
+            }
+        }
+
+        private int player2HandCount;
+
+        public int Player2HandCount
+        {
+            get { return player2HandCount; }
+            set
+            {
+                player2HandCount = value;
+                NotifyOfPropertyChange(() => Player2HandCount);
+            }
+        }
+
+        private string winnerLabel;
+
+        public string WinnerLabel
+        {
+            get { return winnerLabel; }
+            set
+            {
+                winnerLabel = value;
+                NotifyOfPropertyChange(() => WinnerLabel);
+            }
+        }
+
+
+        public void onSlap(int playerNum)
+        {
+            
+            bool validSlap = board.playerSlapped(playerNum);
             if (validSlap == true)
                 CardURL = "";
             updateCounts();
             int winner  = board.checkWinner();
             if (winner != -1)
-                displayWinner();
+                displayWinner(winner);
+
         }
 
 
-        public void onFlip(int playerId)
+        public void onFlip(int playerNum)
         {
-            Card card = board.players[0].Flip();
+            Card card = board.getPlayer(playerNum).Flip();
             board.addCard(card);
             board.lastPlayed = 1;
             CardURL = card.ToString();
@@ -60,11 +98,15 @@
         private void updateCounts()
         {
             PileCount = board.getPileCount();
+            Player1HandCount = board.getPlayer(1).getHandCount();
+            Player2HandCount = board.getPlayer(2).getHandCount();
+
         }
 
-        private void displayWinner()
+        private void displayWinner(int playerId)
         {
-            // TODO
+            playerId++;
+            WinnerLabel = "Player " + playerId + " Wins!!!";
         }
 
         public BoardViewModel()

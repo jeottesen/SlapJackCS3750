@@ -18,9 +18,9 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-     
-        
-<!--begin col1-->
+        <Label x:Name="WinnerLabel" Content="{Binding WinnerLabel}" Grid.ColumnSpan="3" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="30" Foreground="RoyalBlue" FontWeight="DemiBold" />
+
+        <!--begin col1-->
         <Grid Grid.Column="0" Height="60" Width="100" VerticalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
@@ -29,7 +29,7 @@
             </Grid.RowDefinitions>
             <Label x:Name="Player1_Label" Grid.Row="0" Height="40" Width="100" Content="Player 1" FontSize="20" Foreground="RoyalBlue" FontWeight="DemiBold" />
             <Label Grid.Row="1" Height="30" Width="60" Content="Count:" FontSize="12" Foreground="RoyalBlue" FontWeight="DemiBold" HorizontalAlignment="Left" />
-            <Label x:Name="Player1_count_Label" Grid.Row="1" Height="30" Width="40" Content="TBD" FontSize="14" Foreground="RoyalBlue" FontWeight="DemiBold" HorizontalAlignment="Right" />
+            <Label x:Name="Player1HandCount" Grid.Row="1" Height="30" Width="40"  FontSize="14" Foreground="RoyalBlue" FontWeight="DemiBold" HorizontalAlignment="Right" />
         </Grid>
         
        
@@ -50,9 +50,9 @@
                 <RowDefinition>
                 </RowDefinition>
             </Grid.RowDefinitions>
-            <Label x:Name="Player2_Label" Grid.Row="0" Height="40" Width="100" Content="Player 1" FontSize="20" Foreground="RoyalBlue" FontWeight="DemiBold" />
+            <Label x:Name="Player2_Label" Grid.Row="0" Height="40" Width="100" Content="Player 2" FontSize="20" Foreground="RoyalBlue" FontWeight="DemiBold" />
             <Label Grid.Row="1" Height="30" Width="60" Content="Count:" FontSize="12" Foreground="RoyalBlue" FontWeight="DemiBold" HorizontalAlignment="Left" />
-            <Label x:Name="Player2_count_Label" Grid.Row="1" Height="30" Width="40" Content="TBD" FontSize="14" Foreground="RoyalBlue" FontWeight="DemiBold" HorizontalAlignment="Right" />
+            <Label x:Name="Player2HandCount" Grid.Row="1" Height="30" Width="40"  FontSize="14" Foreground="RoyalBlue" FontWeight="DemiBold" HorizontalAlignment="Right" />
         </Grid>
         <Image Source="/Img/cardback.png" Grid.Column="2" VerticalAlignment="Bottom" Height="200"/>
  <!--end col3-->
