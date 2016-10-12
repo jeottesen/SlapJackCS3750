@@ -37,7 +37,7 @@
             for (int playerId = 0; playerId < MAX_PLAYERS; playerId++)
                 players.Add(new Player());
             
-            lastPlayed = 1;
+            lastPlayed = 2;
 
             //deal players their cards
             deck = new Deck();

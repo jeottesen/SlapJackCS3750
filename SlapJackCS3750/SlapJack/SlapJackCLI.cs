@@ -17,6 +17,7 @@
             Board board = new Board();
 
             Console.WriteLine("Hello, Wecome to SlapJack CLI please flip a card.");
+            Console.WriteLine("Player " + (3 - board.lastPlayed) + "'s turn");
             //This will loop as long as the game has not ended
             while (!gameEnd)
             {
@@ -55,6 +56,7 @@
                 switch (winner)
                 {
                     case -1:
+                        Console.WriteLine("Player " + (3 - board.lastPlayed) + "'s turn");
                         break;
                     case 1:
                         Console.WriteLine("Player 1 wins!");
