@@ -98,6 +98,7 @@
             }
             else
             {
+                board.addCard(card);
                 CardURL = card.ToString();
                 updateCounts();
             }
