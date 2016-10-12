@@ -95,7 +95,7 @@
                 Card card = getPlayer(playerId).Flip();
                 if (card == null)
                     return null;
-                pile.Add(card);
+//                pile.Add(card);
                 lastPlayed = playerId;
                 return card;
             }
