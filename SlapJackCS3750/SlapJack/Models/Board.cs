@@ -81,7 +81,7 @@
             }
             else
             {
-                Console.WriteLine("Player " + playerId + "'s slap failed. He gave a card to player " + lastPlayed);
+                Console.WriteLine("Player " + playerId + "'s slap failed. He gave a card to player " + (3 - playerId));
                 getPlayer((3 - playerId)).receiveCard(getPlayer(playerId).Flip());
             }
 
@@ -95,7 +95,7 @@
                 Card card = getPlayer(playerId).Flip();
                 if (card == null)
                     return null;
-//                pile.Add(card);
+                addCard(card);
                 lastPlayed = playerId;
                 return card;
             }

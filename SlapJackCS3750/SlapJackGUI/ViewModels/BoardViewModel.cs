@@ -76,9 +76,12 @@
         {
             
             bool validSlap = board.playerSlapped(playerNum);
-            if (validSlap == true)
-                CardURL = "";
             updateCounts();
+            if (validSlap)
+                CardURL = "";
+            else
+                WinnerLabel = "Player " + playerNum + "'s slap failed. He gave a card to player " + (3 - playerNum);
+            
             checkAndDisplayWinner();
 
         }
@@ -95,7 +98,6 @@
             }
             else
             {
-                board.addCard(card);
                 CardURL = card.ToString();
                 updateCounts();
             }
