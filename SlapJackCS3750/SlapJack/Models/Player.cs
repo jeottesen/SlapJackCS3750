@@ -34,7 +34,10 @@
         public void receiveCard(Card card)
         {
             // Add to the top of the hand
-            hand.Insert(0, card);
+            if (card != null)
+            {
+                hand.Insert(0, card);
+            }
         }
 
         public void addToBottom(Card card)

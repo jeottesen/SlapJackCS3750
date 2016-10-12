@@ -108,6 +108,7 @@
             Player2HandCount = board.getPlayer(2).getHandCount();
             if (player1HandCount == 0 || Player2HandCount == 0)
                 checkAndDisplayWinner();
+            
 
         }
 
@@ -119,7 +120,9 @@
                 playerId++;
                 WinnerLabel = "Player " + playerId + " Wins!!!";
             }
+            
         }
+
 
         public BoardViewModel()
         {

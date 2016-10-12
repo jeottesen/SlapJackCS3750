@@ -82,7 +82,7 @@
             else
             {
                 Console.WriteLine("Player " + playerId + "'s slap failed. He gave a card to player " + lastPlayed);
-                getPlayer(lastPlayed).receiveCard(getPlayer(playerId).Flip());
+                getPlayer((3 - playerId)).receiveCard(getPlayer(playerId).Flip());
             }
 
             return slapValidity;
