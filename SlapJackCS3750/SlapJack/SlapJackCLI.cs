@@ -36,7 +36,8 @@
                         break;
                     case 'c':
                         card = board.playerFlipped(1);
-                        Console.WriteLine("Player 1 flipped a " + card + " to the top of the pile");
+                        if (card != null)
+                            Console.WriteLine("Player 1 flipped a " + card + " to the top of the pile");
                         break;
                     // player 2 inputs
                     case '/':
@@ -45,7 +46,8 @@
                         break;
                     case ',':
                         card = board.playerFlipped(2);
-                        Console.WriteLine("Player 2 flipped a " + card + " to the top of the pile");
+                        if(card != null)
+                            Console.WriteLine("Player 2 flipped a " + card + " to the top of the pile");
                         break;
                 }
 

@@ -90,12 +90,16 @@
 
         public Card playerFlipped(int playerId)
         {
-            Card card = getPlayer(playerId).Flip();
-            if (card == null)
-                return null;
-            pile.Add(card);
-            lastPlayed = playerId;
-            return card;
+            if (playerId != lastPlayed)
+            {
+                Card card = getPlayer(playerId).Flip();
+                if (card == null)
+                    return null;
+                pile.Add(card);
+                lastPlayed = playerId;
+                return card;
+            }
+            return null;
         }
 
         /// <summary>
@@ -108,7 +112,7 @@
             for (int playerId = 0; playerId < MAX_PLAYERS; playerId++)
                 winnerId = players[playerId].getHandCount() == 52 ? playerId : -1;
             for (int playerId = 0; playerId < MAX_PLAYERS; playerId++)
-                winnerId = (players[playerId].getHandCount() + pile.Count) == 52 ? playerId : -1;
+                winnerId = (players[playerId].getHandCount() + pile.Count) >= 52 ? playerId : -1;
             return winnerId;
         }
 

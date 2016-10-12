@@ -93,9 +93,12 @@
                 checkAndDisplayWinner();
                 return;
             }
-            board.addCard(card);
-            CardURL = card.ToString();
-            updateCounts();
+            else
+            {
+                board.addCard(card);
+                CardURL = card.ToString();
+                updateCounts();
+            }
         }
 
         private void updateCounts()
