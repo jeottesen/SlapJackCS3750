@@ -29,29 +29,38 @@
                 Card card;
                 switch (pressedKey)
                 {
+                    // Player 1 inputs
                     case 'z':
                         Console.WriteLine("Player 1 slapped!");
-                        gameEnd = board.playerSlapped(1);
-                        if (gameEnd == true)
-                            Console.WriteLine("Player 1 Wins!");
+                        board.playerSlapped(1);
                         break;
                     case 'c':
-                        card = board.players[0].Flip();
-                        board.addCard(card);
-                        board.lastPlayed = 1;
+                        card = board.playerFlipped(1);
                         Console.WriteLine("Player 1 flipped a " + card + " to the top of the pile");
                         break;
+                    // player 2 inputs
                     case '/':
                         Console.WriteLine("Player 2 slapped!");
-                        gameEnd = board.playerSlapped(2);
-                        if (gameEnd == true)
-                            Console.WriteLine("Player 2 Wins!");
+                        board.playerSlapped(2);
                         break;
                     case ',':
-                        card = board.players[1].Flip();
-                        board.addCard(card);
-                        board.lastPlayed = 2;
+                        card = board.playerFlipped(2);
                         Console.WriteLine("Player 2 flipped a " + card + " to the top of the pile");
+                        break;
+                }
+
+                int winner = board.checkWinner();
+                switch (winner)
+                {
+                    case -1:
+                        break;
+                    case 1:
+                        Console.WriteLine("Player 1 wins!");
+                        gameEnd = true;
+                        break;
+                    case 2:
+                        Console.WriteLine("Player 2 wins!");
+                        gameEnd = true;
                         break;
                 }
 
