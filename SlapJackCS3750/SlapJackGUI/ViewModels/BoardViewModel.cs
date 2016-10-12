@@ -106,6 +106,7 @@
             PileCount = board.getPileCount();
             Player1HandCount = board.getPlayer(1).getHandCount();
             Player2HandCount = board.getPlayer(2).getHandCount();
+            Console.WriteLine(Player2HandCount);
             if (player1HandCount == 0 || Player2HandCount == 0)
                 checkAndDisplayWinner();
             else

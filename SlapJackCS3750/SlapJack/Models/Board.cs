@@ -110,9 +110,13 @@
         {
             int winnerId = -1;
             for (int playerId = 0; playerId < MAX_PLAYERS; playerId++)
-                winnerId = players[playerId].getHandCount() == 52 ? playerId : -1;
+            {
+                winnerId = players[playerId].getHandCount() >= 52 ? playerId : winnerId;
+            }
             for (int playerId = 0; playerId < MAX_PLAYERS; playerId++)
-                winnerId = (players[playerId].getHandCount() + pile.Count) >= 52 ? playerId : -1;
+            {
+                winnerId = (players[playerId].getHandCount() + pile.Count) >= 52 ? playerId : winnerId;
+            }
             return winnerId;
         }
 
