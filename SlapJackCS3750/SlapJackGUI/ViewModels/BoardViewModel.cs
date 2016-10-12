@@ -59,7 +59,7 @@
             }
         }
 
-        private string winnerLabel;
+        private string winnerLabel = "Player 2's turn";
 
         public string WinnerLabel
         {
@@ -108,6 +108,10 @@
             Player2HandCount = board.getPlayer(2).getHandCount();
             if (player1HandCount == 0 || Player2HandCount == 0)
                 checkAndDisplayWinner();
+            else
+            {
+                WinnerLabel = "Player " + (3 - board.lastPlayed) + "'s turn";
+            }
             
 
         }
